@@ -5,8 +5,8 @@
   </a>
   <h2 align="center">.NetCore_Angular_Camp_CarRental</h2>
   <p align="center">
-    Frontend : <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/tree/main/Frontend">
-    Backrnd : <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/tree/main/Backend">
+    Frontend : <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/tree/main/Frontend">FRONTEND/ANGULAR</a>
+    Backend : <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/tree/main/Backend">BACKEND/.NETCORE</a>
     <br />
     <br />
     <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/issues">Report Bug</a>
