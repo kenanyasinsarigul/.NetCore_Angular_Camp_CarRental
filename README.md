@@ -3,7 +3,7 @@
   <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd">
     <img src="https://user-images.githubusercontent.com/51781007/113292546-54adf580-92fd-11eb-8944-b23a33b570cf.png" alt="ReCap Project">
   </a>
-  <h2 align="center">ReCapProject_CarRental_FrontEnd</h2>
+  <h2 align="center">.NetCore_Angular_Camp_CarRental</h2>
   <p align="center">
     Frontend of <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd">ReCapProject</a> with Angular.
     <br />
