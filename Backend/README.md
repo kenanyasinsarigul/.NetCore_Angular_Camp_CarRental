@@ -10,16 +10,18 @@
   <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd">
     <img src="https://user-images.githubusercontent.com/51781007/113292546-54adf580-92fd-11eb-8944-b23a33b570cf.png" alt="ReCap Project">
   </a>
-  <h2 align="center">ReCapProject_CarRental_FrontEnd</h2>
+  <h2 align="center">.NetCore_Angular_Camp_CarRental</h2>
   <p align="center">
-    Frontend of <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd">ReCapProject</a> with Angular.
+    Frontend : <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/tree/main/Frontend">ANGULAR</a>
+    Backend : <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/tree/main/Backend">.NETCORE</a>
     <br />
     <br />
-    <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd/issues">Report Bug</a>
+    <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/issues">Report Bug</a>
     ·
-    <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd/issues">Request Feature</a>
+    <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/issues">Request Feature</a>
   </p>
 </p>
+
 
 A car rental project developed with C# and .Net Core Framework. In development phase, N-Layered Architecture model was followed.
 You can perform basic CRUD operations with this program. Also, this program has JWT Bearer system. 
