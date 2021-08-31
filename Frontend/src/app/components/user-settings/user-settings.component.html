@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-body ">
+        <form class="row g-3" [formGroup]="userUpdateForm">
+            <div class="col-md-6 col-sm-12">
+                <label for="FirstName" class="form-label">İsim</label>
+                <input type="text" class="form-control" id="FirstName" formControlName="firstName"
+                [ngClass]="{ 'is-invalid': updateFormControls.firstName.touched && updateFormControls.firstName.errors }" />
+            <div *ngIf="updateFormControls.firstName.touched && updateFormControls.firstName.errors"
+                class="invalid-feedback">
+                <div *ngIf="updateFormControls.firstName.errors.required">İsim Gereklidir!</div>
+            </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label for="LastName" class="form-label">Soyisim</label>
+                <input type="text" class="form-control" id="LastName" formControlName="lastName"
+                    [ngClass]="{ 'is-invalid': updateFormControls.lastName.touched && updateFormControls.lastName.errors }" />
+                <div *ngIf="updateFormControls.lastName.touched && updateFormControls.lastName.errors"
+                    class="invalid-feedback">
+                    <div *ngIf="updateFormControls.lastName.errors.required">Soyisim Gereklidir!</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="Email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="Email" formControlName="email"
+                    [ngClass]="{ 'is-invalid': updateFormControls.email.touched && updateFormControls.email.errors }" />
+                <div *ngIf="updateFormControls.email.touched && updateFormControls.email.errors"
+                    class="invalid-feedback">
+                    <div *ngIf="updateFormControls.email.errors.required">Email Gereklidir!</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="Password" class="form-label">Şifre</label>
+                <span class="ms-2 fst-italic text-danger">Devam etmek için şifrenizi giriniz.</span>
+                <input type="password" class="form-control" id="Password" formControlName="password"
+                    [ngClass]="{ 'is-invalid': updateFormControls.password.touched && updateFormControls.password.errors }" />
+                <div *ngIf="updateFormControls.password.touched && updateFormControls.password.errors"
+                    class="invalid-feedback">
+                    <div *ngIf="updateFormControls.password.errors.required">Şifre Gereklidir!</div>
+                </div>
+            </div>
+
+            <div class="col-12 d-flex justify-content-end">
+                <button type="submit" class="btn btn-success" *ngIf="isSuccess==false"  (click)="postUserUpdate()">Güncelle</button>
+                <button class="btn btn-success" *ngIf="isSuccess==true" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

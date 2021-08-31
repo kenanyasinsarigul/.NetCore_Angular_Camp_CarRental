@@ -1,0 +1,49 @@
+<nav class="navbar navbar-light bg-light navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['']">ReCapProjectCarRental</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['']" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Anasayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['/rentals']" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Kiralama</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['/customers']" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Müşteriler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['/cars']" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Araçlar</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn bg-transparent text-white position-relative shadow-none" routerLink="/payment" *ngIf="cartCount() > 0">
+              <fa-icon [icon]="['fas','shopping-cart']"></fa-icon>
+              <span
+                  class="position-absolute translate-middle badge rounded-pill bg-warning text-dark mt-2">{{cartCount()}}</span>
+          </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="px-3 py-2 border-bottom mb-3">
+    <div class="container d-flex flex-wrap justify-content-center align-items-center">
+      <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
+        <input type="search" class="form-control" placeholder="Ara...">
+      </form>
+      <div class="text-end">
+        <app-nav></app-nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="b-example-divider"></div>

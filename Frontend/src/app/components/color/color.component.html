@@ -1,0 +1,17 @@
+<div *ngIf="dataLoaded==false" class="d-flex justify-content-center">
+    <div class="spinner-grow text-info" role="status" aria-hidden="true"></div>
+</div>
+<div class="my-1">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterTextColor"
+        placeholder="Renk giriniz...">
+</div>
+<li [class]="getAllColorClass()" routerLink="/cars">Tüm Araçlar</li>
+<ul *ngIf="dataLoaded==true" class="list-group">
+    <li (click)="setCurrentColor(color)" *ngFor="let color of colors | filterColor:filterText"
+        [class]="getCurrentColorClass(color)" routerLink="/cars/color/{{color.Id}}" style="cursor: pointer;">
+        {{color.Name}}
+        <fa-icon [icon]="['far', 'edit']" style="float: right;" routerLink="/update/color/{{color.Id}}"
+            *ngIf="authService.isAuthenticated() && authService.roleCheck(['admin'])"></fa-icon>
+    </li>
+
+</ul>

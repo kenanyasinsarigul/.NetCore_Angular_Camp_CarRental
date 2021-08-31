@@ -1,0 +1,73 @@
+<div *ngIf="!isHasFindexScore">
+    <div class="alert alert-warning" role="alert">
+        <strong>Findex puanınız bulunmuyor hemen hesaplatın.</strong>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body">
+            <form class="row g-3" [formGroup]="findexForm">
+                <div class="col-md-12 col-sm-12">
+                    <label for="FirstName" class="form-label">Kimlik Numarası</label>
+                    <input type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
+                        maxlength="11" class="form-control" id="FirstName" formControlName="nationalIdentity"
+                        [ngClass]="{ 'is-invalid': findexFormControls.nationalIdentity.touched && findexFormControls.nationalIdentity.errors }" />
+                    <div *ngIf="findexFormControls.nationalIdentity.touched && findexFormControls.nationalIdentity.errors"
+                        class="invalid-feedback">
+                        <div *ngIf="findexFormControls.nationalIdentity.errors.required">Kimlik Numarası Gereklidir!</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <label for="Year" class="form-label">Doğum Yılı</label>
+                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
+                    maxlength="4" class="form-control" id="Year" formControlName="year"
+                        [ngClass]="{ 'is-invalid': findexFormControls.year.touched && findexFormControls.year.errors }" />
+                    <div *ngIf="findexFormControls.year.touched && findexFormControls.year.errors"
+                        class="invalid-feedback">
+                        <div *ngIf="findexFormControls.year.errors.required">Doğum Yılı Gereklidir!</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <label for="Month" class="form-label">Doğum Ayı</label>
+                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
+                    maxlength="2" class="form-control" id="Month" formControlName="month"
+                        [ngClass]="{ 'is-invalid': findexFormControls.month.touched && findexFormControls.month.errors }" />
+                    <div *ngIf="findexFormControls.month.touched && findexFormControls.month.errors"
+                        class="invalid-feedback">
+                        <div *ngIf="findexFormControls.month.errors.required">Doğum Ayı Gereklidir!</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <label for="Day" class="form-label">Doğum Günü</label>
+                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
+                    maxlength="2" class="form-control" id="Day" formControlName="day"
+                        [ngClass]="{ 'is-invalid': findexFormControls.day.touched && findexFormControls.day.errors }" />
+                    <div *ngIf="findexFormControls.day.touched && findexFormControls.day.errors"
+                        class="invalid-feedback">
+                        <div *ngIf="findexFormControls.day.errors.required">Doğum Günü Gereklidir!</div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success" *ngIf="!spinner"
+                        (click)="postFindexForm()">Hesaplanan Findex Puanı</button>
+                    <button class="btn btn-success" *ngIf="spinner" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="isHasFindexScore">
+    <div class="card mb-3">
+        <div class="card-body" *ngIf="findexModel !== null || findexModel !== undefined">
+            <div class="alert alert-info mb-0" role="alert">
+                <strong>Findex Puanınız: </strong> {{findexModel.findexScore}}
+            </div>
+        </div>
+    </div>
+</div>

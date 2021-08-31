@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row login-area my-4">
+        <div class="col-lg-5 col-md-5 col-sm-12 p-0">
+            <div class="login-image"></div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 p-0 ">
+
+            <div class="card text-center h-100">
+                <button type="button"
+                    class="position-absolute top-0 end-0 me-2 mt-2 bg-secondary shadow-none rounded-circle btn-close p-2 "
+                    aria-label="Close" (click)="turnBack()"></button>
+                <div class="card-body d-flex flex-column justify-content-evenly mx-4">
+                    <form [formGroup]="loginForm">
+
+                        <div class="form-floating mb-3">
+                            <label for="email" class="float-left">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                                formControlName="email" [ngClass]="{ 'is-invalid': loginFormControls.email.touched && loginFormControls.email.errors }" />
+                                <div *ngIf="loginFormControls.email.touched && loginFormControls.email.errors" class="invalid-feedback">
+                                    <div *ngIf="loginFormControls.email.errors.required">Email Gerekli!</div>
+                                </div>
+                            
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label for="password" class="float-left">Şifre</label>
+                            <input type="password" class="form-control" id="password" placeholder="Şifre"
+                                formControlName="password" [ngClass]="{ 'is-invalid': loginFormControls.password.touched && loginFormControls.password.errors }" />
+                                <div *ngIf="loginFormControls.password.touched && loginFormControls.password.errors" class="invalid-feedback">
+                                    <div *ngIf="loginFormControls.password.errors.required">Şifre Gerekli!</div>
+                                </div>
+                            </div>
+                    </form>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-login rounded-pill position-relative" *ngIf="isSuccess==false" (click)="login()">
+                            Giriş
+                        </button>
+                        <button class="btn btn-login rounded-pill position-relative" *ngIf="isSuccess==true" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        </button><br><br>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="top-100 start-50 translate-middle btn btn-register rounded-pill" [routerLink]="['/register']">
+                                Hemen Kayıt Ol
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

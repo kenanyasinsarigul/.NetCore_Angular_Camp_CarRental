@@ -1,0 +1,97 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row login-area my-4">
+        <div class="col-lg-5 col-md-5 col-sm-12 p-0">
+            <div class="login-image"></div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 p-0 ">
+
+            <div class="card text-center h-100">
+                <button type="button"
+                    class="position-absolute top-0 end-0 me-2 mt-2 bg-secondary shadow-none rounded-circle btn-close p-2 "
+                    aria-label="Close" (click)="turnBack()"></button>
+                <div class="card-body d-flex flex-column justify-content-evenly mx-4 my-4">
+                    <form [formGroup]="registerForm" >
+                        <div class="row">
+                            <div class="col-lg col-sm-12">
+                                <div class="form-floating mb-3">
+                                    <label for="firstName" class="float-left">İsim</label>
+                                    <input type="text" class="form-control" id="firstName"
+                                        placeholder="İsim" formControlName="firstName"
+                                        [ngClass]="{ 'is-invalid': registerFormControls.firstName.touched && registerFormControls.firstName.errors }" />
+                                    <div *ngIf="registerFormControls.firstName.touched && registerFormControls.firstName.errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf="registerFormControls.firstName.errors.required">İsim Gerekli!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg col-sm-12">
+                                <label for="lastName" class="float-left">Soyisim</label>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="lastName" placeholder="Soyisim"
+                                        formControlName="lastName"
+                                        [ngClass]="{ 'is-invalid': registerFormControls.lastName.touched && registerFormControls.lastName.errors }" />
+                                    <div *ngIf="registerFormControls.lastName.touched && registerFormControls.lastName.errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf="registerFormControls.lastName.errors.required">Soyisim Gerekli!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <label for="email" class="float-left">Email</label>
+                            <input type="email" class="form-control" id="email"
+                                placeholder="name@example.com" formControlName="email"
+                                [ngClass]="{ 'is-invalid': registerFormControls.email.touched && registerFormControls.email.errors }" />
+                            <div *ngIf="registerFormControls.email.touched && registerFormControls.email.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="registerFormControls.email.errors.required">Email Gerekli!</div>
+                                <div *ngIf="registerFormControls.email.errors.email">Geçerli Değil!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <label for="password" class="float-left">Şifre</label>
+                            <input type="password" class="form-control" id="password" placeholder="Şifre"
+                                formControlName="password"
+                                [ngClass]="{ 'is-invalid': registerFormControls.password.touched && registerFormControls.password.errors }" />
+                            <div *ngIf="registerFormControls.password.touched && registerFormControls.password.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="registerFormControls.password.errors.required">Şifre Gerekli!</div>
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <label for="rePassword" class="float-left">Şifreyi Tekrarla</label>
+                            <input type="password" class="form-control" id="rePassword" placeholder="Şifre"
+                                formControlName="confirmPassword"
+                                [ngClass]="{ 'is-invalid': registerFormControls.confirmPassword.touched && registerFormControls.confirmPassword.errors }" />
+                            <div *ngIf="registerFormControls.confirmPassword.touched && registerFormControls.confirmPassword.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="registerFormControls.confirmPassword.errors.required">Şifre Tekrarı gerekli!</div>
+                                <div *ngIf="registerFormControls.confirmPassword.errors.confirmedValidator">Şifre ve
+                                    Şifre Tekrarı Uyuşmalıdır!
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-register rounded-pill position-relative mt-2" (click)="register()" *ngIf="isSuccess==false">
+                            Kaydet
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">Ücretsiz</span>
+                        </button>
+
+                        <button class="btn btn-register rounded-pill position-relative mt-2" type="button"
+                            *ngIf="isSuccess==true" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">Ücretsiz</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

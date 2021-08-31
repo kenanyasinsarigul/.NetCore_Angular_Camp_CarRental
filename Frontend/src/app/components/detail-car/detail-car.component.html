@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row mt-3">
+  
+      <div class="col-sm-3" *ngIf="isLoggedIn">
+        <section id="rent-area" *ngIf="findexScoreLoaded">
+          <div id="findexCheck" *ngIf="!userFindexScoreNull">
+            <div class="findeks-score-greater-check" *ngIf="userFindexPoint.findexScore >= cars[0].findexScore">
+              <app-rent-car></app-rent-car>
+            </div>
+            <div class="findeks-score-greater-check" *ngIf="userFindexPoint.findexScore < cars[0].findexScore">
+              <div class="card">
+                <h5 class="card-header">Araç Kirala</h5>
+                <div class="card-body">
+                  <div class="alert alert-danger mb-0">
+                    Findex puanınız <strong>({{userFindexPoint.findexScore}})</strong> aracın findex puanından <strong>({{cars[0].findexScore}})</strong> düşük
+                    olduğu için bu aracı kiralayamazsınız.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="findexCheck" *ngIf="userFindexScoreNull">
+            <div class="card">
+              <h5 class="card-header">Araç Kirala</h5>
+              <div class="card-body">
+                <p>Findex puanınız bulunmuyor. Findex puanı olmadan araç kiralama işlemi gerçekleştirilemez. Puanınızı
+                  hesaplatmak için aşağıdaki butona tıklayınız.</p>
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-sm btn-primary shadow-none" routerLink="/user/findex">
+                    Findex Puanı Hesapla <span class="badge bg-warning rounded-pill">
+                      <fa-icon [icon]="['fas', 'chevron-right']" size="lg"></fa-icon>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </section>
+        <section id="rent-area" *ngIf="!findexScoreLoaded">
+          <div class="d-flex">
+            <strong>Yükleniyor...</strong>
+            <div class="spinner-grow text-info ms-auto" role="status" aria-hidden="true"></div>
+          </div>
+        </section>
+  
+      </div>
+  
+      <div class="col-sm-3" *ngIf="!isLoggedIn">
+        <div class="card">
+          <h5 class="card-header">Araç Kirala</h5>
+          <div class="card-body">
+            <p>Araç kiralayabilmek için öncelikle giriş yapmanız gerekmekte.</p>
+            <div class="d-grid gap-2">
+              <button type="button" class="btn btn-dark shadow-none" routerLink="/login">
+                Giriş Yap <span class="badge bg-warning rounded-pill">
+                  <fa-icon [icon]="['fas', 'chevron-right']" size="lg"></fa-icon>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-sm-9">
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide *ngFor="let image of images">
+            <div class="picsum-img-wrapper">
+              <img src="https://localhost:44383/{{image.imagePath}}" class="d-block w-100" height="400px">
+            </div>
+            <div class="carousel-caption" *ngFor="let car of cars">
+              <h3>{{car.description}}</h3>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+  
+        <div class="card mt-2" *ngFor="let car of cars">
+          <h5 class="card-header">Özellikler</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <h5 class="card-title">Araç Modeli</h5>
+                <p class="card-text">{{car.description}}</p>
+                <h5 class="card-title">Yıl</h5>
+                <p class="card-text">{{car.modelYear}}</p>
+                <h5 class="card-title">Araç Rengi</h5>
+                <p class="card-text">{{car.colorName}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h5 class="card-title">Markası</h5>
+                <p class="card-text">{{car.brandName}}</p>
+                <h5 class="card-title">Araç Günlük Kirası</h5>
+                <p class="card-text">{{car.dailyPrice}}</p>
+                <h5 class="card-title">Findeks Puanı</h5>
+                <p class="card-text">{{car.findexScore}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

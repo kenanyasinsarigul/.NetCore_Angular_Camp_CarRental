@@ -1,0 +1,45 @@
+<div class="card">
+    <h5 class="card-header">Araç Kirala</h5>
+    <div class="card-body">
+        <div class="mb-3 row">
+            <label for="dailyPrice" class="col-lg-auto col-form-label">Ücret</label>
+            <div class="col-lg" *ngFor="let car of cars">
+                <input class="form-control" type="text" id="dailyPrice" placeholder="{{car.dailyPrice | currency: '₺'}}"
+                    aria-label="Disabled input example" disabled>
+            </div>
+        </div>
+        <div class="row" *ngIf="!isCompany">
+            <label for="example-date-input" class="col-lg-auto col-form-label">Şirket</label>
+            <p class="text-danger" style="font-size: 0.9rem">Araba kiralamak için şirket olmanız gerekmektedir.
+                Şirketiniz yoksa, kişisel bilgilerinizle şirket hesabına geçiş yapabilirsiniz.</p>
+            <div class="d-grid gap-2">
+                <button type="button" class="btn btn-dark shadow-none" routerLink="/user/company">
+                    Şirket Hesabı<span class="badge bg-warning rounded-pill ms-2">
+                        <fa-icon [icon]="['fas', 'chevron-right']" size="lg"></fa-icon>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="row pe-1" *ngIf="isCompany">
+            <label for="companyName" class="col-lg-auto col-form-label">Şirket</label>
+            <input [(ngModel)]="customerId" class="form-control col-lg me-2" id="companyName" type="text"
+                placeholder="{{customer.companyName}}" [value]="customer.userId" disabled>
+        </div>
+
+        <label for="startDate" class="col-lg-auto col-form-label">Başlangıç</label>
+        <input [(ngModel)]="rentDateValue" id="startDate" class="form-control" min="{{ getRentMinDate() }}"
+            value="{{ getRentMinDate() }}" type="date" [(ngModel)]="rentDate" />
+        <label for="finishDate" class="col-4 col-form-label">Bitiş</label>
+        <input class="form-control" type="date" min="{{ getReturnMinDate() }}" id="finishDate" value="{{ getReturnMinDate() }}"
+            [(ngModel)]="returnDate" />
+        <div class="d-grid gap-2">
+            <button class="btn btn-warning btn-block mt-3" *ngIf="checkAvailability() == true && isCompany"
+                (click)="checkClick()">Aracı Kirala</button>
+            <button class="btn btn-warning btn-block mt-3" *ngIf="checkAvailability() == true && !isCompany"
+                disabled>Aracı Kirala</button>
+            <button class="btn btn-danger mt-3" *ngIf="checkAvailability() == false && isCompany" disabled>Araç
+                Kullanımda</button>
+        </div>
+    </div>
+</div>
+

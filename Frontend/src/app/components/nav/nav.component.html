@@ -1,0 +1,32 @@
+<section id="user-panel" *ngIf="authService.isAuthenticated() == false">
+<button type="button" class="btn btn-success btn-sm text-light me-2 shadow-none" [routerLink]="['/login']">Giriş</button>
+<button type="button" class="btn btn-primary btn-sm me-2 shadow-none" [routerLink]="['/register']">Kayıt Ol</button>
+</section>
+<section id="user-panel" *ngIf="authService.isAuthenticated() == true">
+    <button class="btn btn-primary btn-sm dropdown-toggle shadow-none ms-2 " type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <fa-icon [icon]="['fas', 'user-cog']"></fa-icon> Panel
+    </button>
+    <ul class="dropdown-menu p-0">
+        <li><a class="dropdown-item" routerLink="/user/settings">Profil Ayarları</a></li>
+        <div *ngIf="authService.roleCheck(['admin'])">
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <h6 class="dropdown-header">Yönetim</h6>
+            <li><a class="dropdown-item" routerLink="/add/car">Araç Ekle</a></li>
+            <li><a class="dropdown-item" routerLink="/add/color">Renk Ekle</a></li>
+            <li><a class="dropdown-item" routerLink="/add/brand">Marka Ekle</a></li>
+        </div>
+    </ul>
+
+    <button class="btn btn-danger btn-sm ms-2 shadow-none" type="button" (click)="logOut()">
+        <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>
+    </button>
+    <span style="font-weight:bold; color: green;">
+        {{welcomeMessage}}
+    </span>
+    <span style="font-weight:bold">
+         {{authService.name}}
+    </span>
+</section>

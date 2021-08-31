@@ -1,0 +1,6 @@
+{
+    "/images": {
+      "target": "https://localhost:44383/api/",
+      "secure": false
+    }
+  }

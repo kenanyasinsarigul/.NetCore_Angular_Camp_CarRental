@@ -1,0 +1,101 @@
+<div class="container mt-3 content">
+    <div class="col-lg">
+        <div class="card">
+            <div class="card-header">
+                <h4>Araç Ekle</h4>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="carAddForm">
+                    <div class="row mb-3">
+                        <div class="col-lg-2">
+                            <label for="brandList" class="form-label">Marka:</label>
+                        </div>
+                        <div class="col-lg">
+                            <select id="brandList" class="form-select" size="3" aria-label="size 3 select example"
+                                formControlName="brandId">
+                                <option selected>Marka Seçiniz</option>
+                                <option *ngFor="let brand of brands" value="{{brand.Id}}">{{brand.Name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-2">
+                            <label for="colorList" class="form-label">Renk:</label>
+                        </div>
+                        <div class="col-lg">
+                            <select id="colorList" class="form-select" size="3" aria-label="size 3 select example"
+                                formControlName="colorId">
+                                <option selected>Renk Seçiniz</option>
+                                <option *ngFor="let color of colors" value="{{color.Id}}">{{color.Name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-2">
+                            <label for="modelYearList" class="form-label">Model Yılı:</label>
+                        </div>
+                        <div class="col-lg">
+                            <select id="modelYearList" class="form-select" size="3" aria-label="size 3 select example"
+                                formControlName="modelYear">
+                                <option selected>Model Yılını Seçiniz</option>
+                                <option *ngFor="let modelYear of modelYears" value="{{modelYear}}">{{modelYear}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-2">
+                            <label for="dailyPrice" class="form-label">Günlük Ücret:</label>
+                        </div>
+                        <div class="col-lg">
+                            <input type="number" class="form-control" id="dailyPrice" formControlName="dailyPrice"
+                                placeholder="örn. 100"
+                                [ngClass]="{ 'is-invalid': carFormControls.dailyPrice.touched && carFormControls.dailyPrice.errors }" />
+                            <div *ngIf="carFormControls.dailyPrice.touched && carFormControls.dailyPrice.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="carFormControls.dailyPrice.errors.required">Ücret Bilgisi Gereklidir!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-2">
+                            <label for="description" class="form-label">Açıklama:</label>
+                        </div>
+                        <div class="col-lg">
+                            <textarea class="form-control" id="description" rows="3" formControlName="description"
+                                placeholder="Açıklama..."
+                                [ngClass]="{ 'is-invalid': carFormControls.description.touched && carFormControls.description.errors }">
+                                <div *ngIf="carFormControls.description.touched && carFormControls.description.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="carFormControls.description.errors.required">Açıklama Gereklidir!</div>
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-lg-2">
+                            <label for="findexScore" class="form-label">Findex Skoru:</label>
+                        </div>
+                        <div class="col-lg">
+                            <input type="number" class="form-control" id="findexScore"
+                                formControlName="findexScore" placeholder="örn. 100"
+                                [ngClass]="{ 'is-invalid': carFormControls.findeksScore.touched && carFormControls.findeksScore.errors }" />
+                            <div *ngIf="carFormControls.findeksScore.touched && carFormControls.findeksScore.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="carFormControls.findeksScore.errors.required">Findex Puanı Gereklidir!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-success" (click)="addCar()" type="button">Ekle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
