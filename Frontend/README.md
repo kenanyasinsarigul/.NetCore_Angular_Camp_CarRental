@@ -111,15 +111,15 @@ Project Link: [https://github.com/kenanyasinsarigul/ReCapProject_CarRental_Front
 
 - engindemirog
 
-[contributors-shield]: https://img.shields.io/github/contributors/kenanyasinsarigul/ReCapProject_CarRental_FrontEnd.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributorskenanyasinsarigul/.NetCore_Angular_Camp_CarRental.svg?style=for-the-badge
 [contributors-url]: https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/kenanyasinsarigul/ReCapProject_CarRental_FrontEnd.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental.svg?style=for-the-badge
 [forks-url]: https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/network/members
-[stars-shield]: https://img.shields.io/github/stars/kenanyasinsarigul/ReCapProject_CarRental_FrontEnd.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental.svg?style=for-the-badge
 [stars-url]: https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/stargazers
-[issues-shield]: https://img.shields.io/github/issues/kenanyasinsarigul/ReCapProject_CarRental_FrontEnd.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental.svg?style=for-the-badge
 [issues-url]: https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/issues
-[license-shield]: https://img.shields.io/github/license/kenanyasinsarigul/ReCapProject_CarRental_FrontEnd.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental.svg?style=for-the-badge
 [license-url]: https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/kenan-yasin-sar%C4%B1g%C3%BCl-155379188/
