@@ -5,11 +5,12 @@
   </a>
   <h2 align="center">.NetCore_Angular_Camp_CarRental</h2>
   <p align="center">
-    Frontend of <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd">ReCapProject</a> with Angular.
+    Frontend : <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/tree/main/Frontend">
+    Backrnd : <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/tree/main/Backend">
     <br />
     <br />
-    <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd/issues">Report Bug</a>
+    <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/issues">Report Bug</a>
     ·
-    <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd/issues">Request Feature</a>
+    <a href="https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/issues">Request Feature</a>
   </p>
 </p>
