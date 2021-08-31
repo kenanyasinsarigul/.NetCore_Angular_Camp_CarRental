@@ -111,6 +111,9 @@ Project Link: [https://github.com/kenanyasinsarigul/ReCapProject_CarRental_Front
 
 - engindemirog
 
+## Author
+Kenan Yasin SARIGÜL- <a href="https://github.com/kenanyasinsarigul/">Github</a>
+
 [contributors-shield]: https://img.shields.io/github/contributors/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental.svg?style=for-the-badge
 [contributors-url]: https://github.com/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/kenanyasinsarigul/.NetCore_Angular_Camp_CarRental.svg?style=for-the-badge
