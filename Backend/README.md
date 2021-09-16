@@ -7,7 +7,7 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/kenanyasinsarigul/ReCapProject_CarRental_BackEnd">
+  <a href="">
     <img src="https://user-images.githubusercontent.com/51781007/113292546-54adf580-92fd-11eb-8944-b23a33b570cf.png" alt="ReCap Project">
   </a>
   <h2 align="center">.NetCore_Angular_Camp_CarRental</h2>
